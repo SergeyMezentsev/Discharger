@@ -2,6 +2,7 @@
 
 #include "rele.h"
 #include "buttons.h"
+#include "display.h"
 
 volatile uint32_t counter = 0U;
 volatile uint32_t flag = 0U;
