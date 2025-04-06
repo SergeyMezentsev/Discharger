@@ -17,13 +17,11 @@ void handleNotFound();
 WebServer server(80);
 
 void handleRoot() {
-    Serial.println("handleroot();");
     server.send(200, "text/html", pageHTML);
 }
 
 void sendVoltages()
 {
-    Serial.println("senVoltages();");
     String voltages_str("");
     voltages_str += voltages->battery_mv;
     voltages_str += ";";
@@ -62,13 +60,12 @@ void manageVoltages()
 }
 
 void handleNotFound() {
-    Serial.println("handleNotFound();");
     server.send(404, "text/plain", String("Page is absent!"));
 }
 
 void init_server(const char* ssid)
 {
-    Serial.begin(115200);
+    
 
     // Start the server
     if (!WiFi.softAP(ssid)) {
@@ -87,9 +84,9 @@ void init_server(const char* ssid)
     server.on("/", handleRoot);
     server.on("/voltages", manageVoltages);
     server.onNotFound(handleNotFound);
+    server.begin();
 
     // Debuf info
-    // server.begin();
     // Serial.println("HTTP server started");
 }
 
