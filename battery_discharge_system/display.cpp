@@ -59,9 +59,9 @@ void init_display()
         .name = {'R', '_', '3', ':', '\0'},
         .voltage = {'1', '.', '3', '0', ' ', 'V', '\0'}
     };
-    line_array[G_LINE] = {
+    line_array[H_LINE] = {
         85, 30, 85, 40, 0U, 0U,
-        .name = {' ', 'G', ':', ' ', '\0'},
+        .name = {' ', 'H', ':', ' ', '\0'},
         .voltage = {'0', '.', '3', '0', ' ', 'V', '\0'}
     };
 
@@ -71,7 +71,7 @@ void init_display()
     update_line(R_1_LINE);
     update_line(R_2_LINE);
     update_line(R_3_LINE);
-    update_line(G_LINE);
+    update_line(H_LINE);
 }
 
 
@@ -104,7 +104,7 @@ void set_bat_voltage(float voltage)
 void highlight_line(uint8_t line)
 {
     line_array[line].name_is_highlighted = 1U;
-    if (line == G_LINE)
+    if (line == H_LINE)
         display.setCursor(line_array[line].x_name - 2, line_array[line].y_name);
     else
         display.setCursor(line_array[line].x_name - 7, line_array[line].y_name);
@@ -116,7 +116,7 @@ void highlight_line(uint8_t line)
 void dehighlight_line(uint8_t line)
 {
     line_array[line].name_is_highlighted = 0U;
-    if (line == G_LINE)
+    if (line == H_LINE)
         display.fillRect(line_array[line].x_name - 2, line_array[line].y_name, 7, 7, BLACK);
     else
         display.fillRect(line_array[line].x_name - 7, line_array[line].y_name, 7, 7, BLACK);
@@ -127,7 +127,7 @@ void dehighlight_line(uint8_t line)
 void choose_line(uint8_t line)
 {
     line_array[line].voltage_is_chosen = 1U;
-    if (line == G_LINE)
+    if (line == H_LINE)
         display.drawFastHLine(line_array[line].x_voltage, line_array[line].y_voltage + 8, 36, WHITE);
     else
     {
@@ -141,7 +141,7 @@ void choose_line(uint8_t line)
 void unchoose_line(uint8_t line)
 {
     line_array[line].voltage_is_chosen = 0U;
-    if (line == G_LINE)
+    if (line == H_LINE)
         display.drawFastHLine(line_array[line].x_voltage, line_array[line].y_voltage + 8, 36, BLACK);
     else
         display.fillRect(line_array[line].x_voltage - 7, line_array[line].y_voltage, 7, 7, BLACK);

@@ -1,8 +1,8 @@
+// This file is dedicated for relay driving
+
 #include "esp32-hal.h"
 #include "esp32-hal-gpio.h"
 #include <stdint.h>
-
-// This file is dedicated for relay driving
 
 #include "relay.h"
 #include "voltages_structure.h"

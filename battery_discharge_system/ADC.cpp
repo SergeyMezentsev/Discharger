@@ -6,7 +6,7 @@
 #include "voltages_structure.h"
 
 // DEBUG_START
-#include <HardwareSerial.h>
+// #include <HardwareSerial.h>
 // DEBUG_END
 
 
@@ -29,7 +29,7 @@ void handle_ADC()
         lastTimeStamp = millis();
 
         // DEBUG_START
-        Serial.printf("ADC = %d\n", voltages->battery_mv);
+        // Serial.printf("ADC = %d\n", voltages->battery_mv);
         // DEBUG_END
     }
 

@@ -1,5 +1,7 @@
 // This file provides diplay API
 
+#include <stdint.h>
+
 #ifndef DISPLAY_H
 #define DISPLAY_H
 
@@ -7,7 +9,7 @@
 #define R_1_LINE 1
 #define R_2_LINE 2
 #define R_3_LINE 3
-#define G_LINE   4
+#define H_LINE   4
 
 void init_display();
 void set_line_voltage(uint8_t line, float voltage);
