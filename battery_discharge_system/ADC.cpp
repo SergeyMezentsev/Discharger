@@ -13,7 +13,7 @@
 
 #define ADC_PIN        33
 #define ADC_RESOLUTION 12
-#define PERIOD_ADC_MS  1000
+#define PERIOD_ADC_MS  500
 
 void init_ADC()
 {

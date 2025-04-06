@@ -18,7 +18,7 @@
 #define RELAY_UP     HIGH
 #define RELAY_DOWN   LOW
 
-#define PERIOD_RELAY_MS  1000
+#define PERIOD_RELAY_MS  500
 
 typedef struct {
     uint8_t pin;
