@@ -361,7 +361,7 @@ String pageHTML = R"=====(
             refresh_voltages_on_screen();
         }
 
-        setInterval(update_info_from_server, 1000);  // gets the info from the server once in 2 seconds
+        setInterval(update_info_from_server, 500);  // gets the info from the server once in 2 seconds
         
         // send new info to the server
         function send_info_to_server() {
