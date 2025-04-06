@@ -1,6 +1,6 @@
-#include "esp32-hal.h"
 // File for ADC driving
 
+#include "esp32-hal.h"
 #include <esp32-hal-adc.h>
 #include "ADC.h"
 #include "voltages_structure.h"

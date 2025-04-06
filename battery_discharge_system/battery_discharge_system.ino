@@ -70,6 +70,7 @@
 
 #include "ADC.h"
 #include "local_server.h"
+#include "relay.h"
 
 
 void setup()
@@ -78,7 +79,7 @@ void setup()
     Serial.begin(115200);
     // DEBUG_END
 
-
+    init_relay();
     init_ADC();
     init_server("DISCHARGER");
 }
@@ -86,6 +87,7 @@ void setup()
 void loop()
 {
     handle_ADC();
+    handle_relay();
     handle_server();
 }
 
