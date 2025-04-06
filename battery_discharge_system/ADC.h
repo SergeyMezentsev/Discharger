@@ -2,6 +2,6 @@
 #define ADC_H
 
 void init_ADC();
-unsigned int get_bat_voltage_mv();
+void handle_ADC();
 
 #endif  // ADC_H

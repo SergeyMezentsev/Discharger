@@ -1,17 +1,37 @@
+#include "esp32-hal.h"
 // File for ADC driving
 
 #include <esp32-hal-adc.h>
 #include "ADC.h"
+#include "voltages_structure.h"
 
-#define ADC_PIN 15
+// DEBUG_START
+// #include <HardwareSerial.h>
+// DEBUG_END
+
+
+
+#define ADC_PIN        15
 #define ADC_RESOLUTION 12
+#define PERIOD_ADC_MS  1000
 
 void init_ADC()
 {
     analogReadResolution(ADC_RESOLUTION);
 }
 
-unsigned int get_bat_voltage_mv()
+void handle_ADC()
 {
-    return (unsigned int) analogReadMilliVolts(ADC_PIN);
+    static unsigned long lastTimeStamp = 0U;
+    if (millis() - lastTimeStamp > PERIOD_ADC_MS)
+    {
+        voltages->battery_mv = (int) analogReadMilliVolts(ADC_PIN);
+        lastTimeStamp = millis();
+
+        // DEBUG_START
+        // Serial.printf("ADC = %d\n", voltages->battery_mv);
+        // DEBUG_END
+    }
+
 }
+
