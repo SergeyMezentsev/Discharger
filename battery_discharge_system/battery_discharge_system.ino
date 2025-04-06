@@ -69,6 +69,7 @@
 
 
 #include "ADC.h"
+#include "local_server.h"
 
 
 void setup()
@@ -79,11 +80,13 @@ void setup()
 
 
     init_ADC();
+    init_server("DISCHARGER");
 }
 
 void loop()
 {
     handle_ADC();
+    handle_server();
 }
 
 

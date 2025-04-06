@@ -6,12 +6,12 @@
 #include "voltages_structure.h"
 
 // DEBUG_START
-// #include <HardwareSerial.h>
+#include <HardwareSerial.h>
 // DEBUG_END
 
 
 
-#define ADC_PIN        15
+#define ADC_PIN        33
 #define ADC_RESOLUTION 12
 #define PERIOD_ADC_MS  1000
 
@@ -29,7 +29,7 @@ void handle_ADC()
         lastTimeStamp = millis();
 
         // DEBUG_START
-        // Serial.printf("ADC = %d\n", voltages->battery_mv);
+        Serial.printf("ADC = %d\n", voltages->battery_mv);
         // DEBUG_END
     }
 
